@@ -44,14 +44,20 @@ class MyLinkedList{
     {
         Node slow=head;
         Node fast=head;
+        boolean isExist=false;
         while(fast!=null && fast.next!=null)
         {
             slow=slow.next;
             fast=fast.next.next;
             if(slow==fast)
             {
+                isExist=true;
                 break;
             }
+        }
+        if(isExist==false)
+        {
+            return;
         }
         slow=head;
         Node prev=null;
